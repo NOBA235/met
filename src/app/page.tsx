@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const images = {
-  hero: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=2400&auto=format&fit=crop",
+  hero: "/event1.jpeg",
   featured: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
   event1: "/event1.jpeg",
   event2: "/event2.jpeg",

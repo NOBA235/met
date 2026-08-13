@@ -12,31 +12,31 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f7f7f4] pb-14 pt-28">
+    <div className="min-h-screen bg-background pb-16 pt-28">
       <div className="container-shell max-w-2xl">
-        <div className="mb-9 text-center">
+        <div className="mb-10">
           <p className="eyebrow">Applications</p>
-          <h1 className="heading">Register your interest.</h1>
-          <p className="body-copy mx-auto mt-4 max-w-md">
+          <h1 className="type-section">Register your interest</h1>
+          <p className="type-body mt-5 max-w-md">
             Share your basic details and the Meraki team will follow up with event requirements.
           </p>
         </div>
 
         {submitted ? (
-          <div className="surface-card p-6 text-center md:p-8">
-            <h2 className="subheading">Application received</h2>
-            <p className="body-copy mx-auto mt-3 max-w-md">
+          <div className="surface-card p-6 md:p-8">
+            <h2 className="type-title">Application received</h2>
+            <p className="type-body mt-3 max-w-md">
               Thank you for your interest. Our team will review your details and be in touch.
             </p>
             <Link href="/" className="btn btn-secondary mt-6">
-              Return Home
+              Return home
             </Link>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="surface-card space-y-5 p-5 md:p-6">
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="form-label">Full Name *</label>
+                <label className="form-label">Full name *</label>
                 <input type="text" required className="form-field" />
               </div>
               <div>
@@ -80,7 +80,7 @@ export default function RegisterPage() {
             </div>
 
             <div>
-              <label className="form-label">Short Introduction</label>
+              <label className="form-label">Short introduction</label>
               <textarea
                 rows={4}
                 placeholder="Tell us a little about yourself"
@@ -88,8 +88,8 @@ export default function RegisterPage() {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary w-full">
-              Submit Application
+            <button type="submit" className="btn btn-primary">
+              Submit application
             </button>
           </form>
         )}

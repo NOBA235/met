@@ -29,8 +29,8 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors ${
         transparent
-          ? "border-white/10 bg-transparent"
-          : "border-[#d8d1c2] bg-[#f5f3ee]/94 backdrop-blur-md"
+          ? "border-ivory/10 bg-transparent"
+          : "border-line bg-background/95 backdrop-blur-md"
       }`}
     >
       <div className="container-shell">
@@ -38,25 +38,23 @@ export default function Navbar() {
           <Link href="/" className="leading-none" onClick={() => setMobileOpen(false)}>
             <span className="flex items-center gap-3">
               <span
-                className={`display-font flex h-9 w-9 items-center justify-center border text-lg leading-none ${
-                  transparent
-                    ? "border-[#e8dfcf]/42 text-[#e8dfcf]"
-                    : "border-[#9c7833]/45 text-[#9c7833]"
+                className={`display-font flex h-10 w-10 items-center justify-center border text-xl leading-none ${
+                  transparent ? "border-ivory/35 text-ivory" : "border-line text-accent"
                 }`}
               >
                 M
               </span>
               <span>
                 <span
-                  className={`block text-[15px] font-semibold uppercase ${
-                    transparent ? "text-[#e8dfcf]" : "text-[#141414]"
+                  className={`display-font block text-[22px] leading-[0.9] ${
+                    transparent ? "text-ivory" : "text-foreground"
                   }`}
                 >
                   Meraki
                 </span>
                 <span
-                  className={`mt-0.5 block text-[11px] ${
-                    transparent ? "text-[#cfc5b4]" : "text-[#686157]"
+                  className={`mt-1 block text-[10px] font-medium ${
+                    transparent ? "text-dark-muted" : "text-muted"
                   }`}
                 >
                   Entertainment
@@ -71,7 +69,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium ${
-                  transparent ? "text-[#cfc5b4] hover:text-[#e8dfcf]" : "text-[#393631] hover:text-[#9c7833]"
+                  transparent ? "text-dark-muted hover:text-ivory" : "text-muted-strong hover:text-foreground"
                 }`}
               >
                 {link.label}
@@ -85,7 +83,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className={`hidden sm:inline-flex ${
-                transparent ? "text-[#cfc5b4] hover:text-[#e8dfcf]" : "text-[#393631] hover:text-[#9c7833]"
+                transparent ? "text-dark-muted hover:text-ivory" : "text-muted-strong hover:text-foreground"
               }`}
               aria-label="Instagram"
             >
@@ -96,20 +94,18 @@ export default function Navbar() {
 
             <Link
               href="/register"
-              className={`hidden min-h-10 items-center justify-center border px-4 text-sm font-semibold md:inline-flex ${
+              className={`hidden min-h-10 items-center justify-center border px-4 text-sm font-medium md:inline-flex ${
                 transparent
-                  ? "border-[#e8dfcf]/32 text-[#e8dfcf] hover:border-[#e8dfcf]/76"
-                  : "border-[#d8d1c2] text-[#141414] hover:border-[#141414]"
+                  ? "border-ivory/30 text-ivory hover:border-ivory/70"
+                  : "border-line text-foreground hover:border-muted-strong"
               }`}
             >
-              Register
+              Apply
             </Link>
 
             <button
               className={`inline-flex h-10 w-10 items-center justify-center border lg:hidden ${
-                transparent
-                  ? "border-[#e8dfcf]/32 text-[#e8dfcf]"
-                  : "border-[#d8d1c2] text-[#141414]"
+                transparent ? "border-ivory/30 text-ivory" : "border-line text-foreground"
               }`}
               onClick={() => setMobileOpen((open) => !open)}
               aria-label="Toggle menu"
@@ -129,13 +125,13 @@ export default function Navbar() {
       </div>
 
       <div className={`lg:hidden ${mobileOpen ? "block" : "hidden"}`}>
-        <div className="border-t border-[#d8d1c2] bg-[#f5f3ee] px-4 py-3">
+        <div className="border-t border-line bg-background px-4 py-3">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block border-b border-[#d8d1c2]/70 py-3 text-sm font-medium text-[#141414]"
+              className="block border-b border-line py-3 text-sm font-medium text-foreground"
             >
               {link.label}
             </Link>
@@ -145,7 +141,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
             className="btn btn-primary mt-4 w-full"
           >
-            Register
+            Apply now
           </Link>
         </div>
       </div>

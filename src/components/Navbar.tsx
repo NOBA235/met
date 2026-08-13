@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/#events", label: "Events" },
@@ -12,8 +13,10 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const transparent = pathname === "/" && !scrolled && !mobileOpen;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -25,16 +28,28 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors ${
-        scrolled || mobileOpen
-          ? "border-[#dedbd3] bg-[#f7f7f4]/95 backdrop-blur-md"
-          : "border-white/10 bg-white/80 backdrop-blur-md"
+        transparent
+          ? "border-white/10 bg-transparent"
+          : "border-[#d8d1c2] bg-[#f5f3ee]/94 backdrop-blur-md"
       }`}
     >
       <div className="container-shell">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="leading-none" onClick={() => setMobileOpen(false)}>
-            <span className="block text-[17px] font-semibold text-[#151515]">Meraki</span>
-            <span className="mt-1 block text-[12px] text-[#6d6963]">Entertainment</span>
+            <span
+              className={`block text-[17px] font-semibold ${
+                transparent ? "text-white" : "text-[#141414]"
+              }`}
+            >
+              Meraki
+            </span>
+            <span
+              className={`mt-1 block text-[12px] ${
+                transparent ? "text-white/66" : "text-[#686157]"
+              }`}
+            >
+              Entertainment
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-6 lg:flex">
@@ -42,7 +57,9 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-[#484540] hover:text-[#8d7132]"
+                className={`text-sm font-medium ${
+                  transparent ? "text-white/76 hover:text-white" : "text-[#393631] hover:text-[#9b7a34]"
+                }`}
               >
                 {link.label}
               </Link>
@@ -54,7 +71,9 @@ export default function Navbar() {
               href="https://www.instagram.com/meraki_entertainment2018/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden text-[#484540] hover:text-[#8d7132] sm:inline-flex"
+              className={`hidden sm:inline-flex ${
+                transparent ? "text-white/76 hover:text-white" : "text-[#393631] hover:text-[#9b7a34]"
+              }`}
               aria-label="Instagram"
             >
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -62,12 +81,23 @@ export default function Navbar() {
               </svg>
             </a>
 
-            <Link href="/register" className="btn btn-secondary hidden md:inline-flex">
+            <Link
+              href="/register"
+              className={`hidden min-h-10 items-center justify-center border px-4 text-sm font-semibold md:inline-flex ${
+                transparent
+                  ? "border-white/24 text-white hover:border-white/70"
+                  : "border-[#d8d1c2] text-[#141414] hover:border-[#141414]"
+              }`}
+            >
               Register
             </Link>
 
             <button
-              className="inline-flex h-10 w-10 items-center justify-center rounded border border-[#dedbd3] text-[#151515] lg:hidden"
+              className={`inline-flex h-10 w-10 items-center justify-center border lg:hidden ${
+                transparent
+                  ? "border-white/24 text-white"
+                  : "border-[#d8d1c2] text-[#141414]"
+              }`}
               onClick={() => setMobileOpen((open) => !open)}
               aria-label="Toggle menu"
             >
@@ -86,13 +116,13 @@ export default function Navbar() {
       </div>
 
       <div className={`lg:hidden ${mobileOpen ? "block" : "hidden"}`}>
-        <div className="border-t border-[#dedbd3] bg-[#f7f7f4] px-4 py-3">
+        <div className="border-t border-[#d8d1c2] bg-[#f5f3ee] px-4 py-3">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block border-b border-[#dedbd3]/70 py-3 text-sm font-medium text-[#151515]"
+              className="block border-b border-[#d8d1c2]/70 py-3 text-sm font-medium text-[#141414]"
             >
               {link.label}
             </Link>

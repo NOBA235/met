@@ -1,135 +1,68 @@
+import Image from "next/image";
 import Link from "next/link";
 
-const events = [
+const platforms = [
   {
     name: "Mr Dimapur",
-    detail: "A flagship pageant for confidence, presentation and individuality.",
-    timing: "2026 registration",
+    detail: "The flagship pageant platform by Meraki Entertainment.",
     img: "/event1.jpeg",
   },
   {
     name: "Mr Kohima",
-    detail: "A regional platform for talent and stage presence.",
-    timing: "Regional edition",
-    img: "/event2.jpeg",
-  },
-  {
-    name: "Mr Chumoukedima",
-    detail: "A growing platform for contestants from the Chumoukedima community.",
-    timing: "Upcoming",
+    detail: "A regional stage for confidence, talent and presentation.",
     img: "/event3.jpeg",
   },
   {
     name: "Ms Chumu",
-    detail: "A platform focused on representation, confidence and personality.",
-    timing: "Coming soon",
-    img: "/event4.jpeg",
+    detail: "A new platform for poise, personality and representation.",
+    img: "/event2.jpeg",
   },
+];
+
+const process = [
+  ["Auditions", "Registration, screening and contestant communication."],
+  ["Grooming", "Walk-throughs, media preparation and stage readiness."],
+  ["Finale", "A polished event experience for audience, contestants and partners."],
 ];
 
 const gallery = [
-  "/event5.jpeg",
-  "/event1.jpeg",
-  "/event2.jpeg",
-  "/event3.jpeg",
-  "/event4.jpeg",
-  "/s5.jpeg",
-];
-
-const services = [
-  {
-    title: "Pageants",
-    copy: "Complete show planning, contestant coordination and finale production.",
-  },
-  {
-    title: "Events",
-    copy: "Stage-led cultural, entertainment and community experiences.",
-  },
-  {
-    title: "Partnerships",
-    copy: "Sponsor, media and brand collaborations built around engaged audiences.",
-  },
+  { src: "/event1.jpeg", className: "md:col-span-2 md:row-span-2", focus: "photo-focus-top" },
+  { src: "/event3.jpeg", className: "", focus: "photo-focus-center" },
+  { src: "/event4.jpeg", className: "", focus: "photo-focus-center" },
+  { src: "/event2.jpeg", className: "", focus: "photo-focus-top" },
+  { src: "/s5.jpeg", className: "", focus: "photo-focus-top" },
 ];
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative flex h-[82vh] min-h-[520px] max-h-[720px] items-end overflow-hidden bg-[#111111]">
-        <img
+      <section className="relative min-h-[740px] overflow-hidden bg-[#10100f] text-white">
+        <Image
           src="/event1.jpeg"
-          alt="Meraki Entertainment event stage"
-          className="absolute inset-0 h-full w-full object-cover"
+          alt="Meraki Entertainment winners on stage"
+          fill
+          priority
+          sizes="100vw"
+          className="hero-photo"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/15" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,16,15,0.86)_0%,rgba(16,16,15,0.55)_42%,rgba(16,16,15,0.16)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#10100f] to-transparent" />
 
-        <div className="container-shell relative z-10 pb-12 pt-28 md:pb-16">
-          <p className="mb-3 text-sm font-semibold text-white/72">Nagaland based event production</p>
-          <h1 className="display text-white">Meraki Entertainment</h1>
-          <p className="mt-5 max-w-xl text-base leading-7 text-white/78">
-            Professional pageants and entertainment platforms for talent, identity and community.
-          </p>
-          <div className="button-row mt-7">
-            <Link href="/#events" className="btn btn-light">
-              View Events
-            </Link>
-            <Link href="/contact" className="btn btn-ghost-light">
-              Contact
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-tight border-b border-[#dedbd3] bg-white">
-        <div className="container-shell grid gap-8 md:grid-cols-3">
-          {services.map((service) => (
-            <div key={service.title}>
-              <h2 className="text-base font-semibold text-[#151515]">{service.title}</h2>
-              <p className="mt-2 text-sm leading-6 text-[#6d6963]">{service.copy}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="upcoming" className="section bg-[#f7f7f4]">
-        <div className="container-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="surface-card">
-            <div className="aspect-[4/3] overflow-hidden">
-              <img
-                src="/event5.jpeg"
-                alt="Mr Dimapur event"
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-
-          <div>
-            <p className="eyebrow">Registration Open</p>
-            <h2 className="heading">Mr Dimapur 2026</h2>
-            <p className="body-copy mt-4 max-w-xl">
-              The next edition is being prepared for contestants across Nagaland. Registration,
-              eligibility and schedule details will be shared through Meraki&apos;s official channels.
+        <div className="container-shell relative z-10 flex min-h-[740px] items-end pb-12 pt-28 md:pb-18">
+          <div className="max-w-3xl">
+            <p className="motion-rise mb-5 text-sm font-semibold text-[#d7c797]">
+              Pageant organization in Nagaland
             </p>
-
-            <div className="mt-6 grid gap-3 border-y border-[#dedbd3] py-5 sm:grid-cols-3">
-              <div>
-                <p className="text-sm font-semibold text-[#151515]">Location</p>
-                <p className="text-sm text-[#6d6963]">Dimapur</p>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-[#151515]">Focus</p>
-                <p className="text-sm text-[#6d6963]">Pageant</p>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-[#151515]">Status</p>
-                <p className="text-sm text-[#6d6963]">Applications open</p>
-              </div>
-            </div>
-
-            <div className="button-row mt-6">
-              <Link href="/register" className="btn btn-primary">
-                Register
+            <h1 className="display motion-rise motion-delay-1">Meraki Entertainment</h1>
+            <p className="motion-rise motion-delay-2 mt-7 max-w-xl text-base leading-8 text-white/78 md:text-lg">
+              Represent your roots. Rise to the stage. A refined platform for pageants,
+              talent and cultural presence.
+            </p>
+            <div className="button-row motion-rise motion-delay-3 mt-9">
+              <Link href="/register" className="btn btn-light">
+                Apply for 2026
               </Link>
-              <Link href="/contact" className="btn btn-secondary">
+              <Link href="/contact" className="btn btn-ghost-light">
                 Partner Enquiry
               </Link>
             </div>
@@ -137,33 +70,115 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="events" className="section bg-white">
-        <div className="container-shell">
-          <div className="mb-8 grid gap-4 md:grid-cols-[0.8fr_1fr] md:items-end">
-            <div>
-              <p className="eyebrow">Platforms</p>
-              <h2 className="heading">Events with a clear stage identity.</h2>
-            </div>
-            <p className="body-copy md:max-w-md md:justify-self-end">
-              Meraki keeps each platform focused, produced and easy to understand for contestants,
-              audiences and partners.
+      <section className="border-b border-[#d8cebd] bg-[#10100f] py-7 text-white">
+        <div className="container-shell flex flex-col gap-3 text-sm text-[#cfc5b4] md:flex-row md:items-center md:justify-between">
+          <span>Mr Dimapur 2026 registration interest is open.</span>
+          <Link href="/register" className="text-link text-white">
+            Start Application
+          </Link>
+        </div>
+      </section>
+
+      <section className="section bg-[#f7f4ee]">
+        <div className="container-shell grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-end">
+          <div>
+            <p className="eyebrow">The Platform</p>
+            <h2 className="headline">Represent Nagaland. Rise with presence.</h2>
+          </div>
+          <p className="body-copy max-w-2xl md:justify-self-end">
+            Meraki Entertainment creates pageant and entertainment platforms with a clean
+            organizational standard: clear communication, elegant visuals, considered production
+            and a stage where contestants feel prepared.
+          </p>
+        </div>
+      </section>
+
+      <section id="upcoming" className="section bg-white">
+        <div className="container-shell grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+          <div>
+            <p className="eyebrow">Now Preparing</p>
+            <h2 className="heading">Mr Dimapur 2026</h2>
+            <p className="body-copy mt-6 max-w-xl">
+              A focused pageant experience for contestants, partners and audiences. Registration
+              details, eligibility and finale announcements will be shared through official Meraki
+              channels.
             </p>
+
+            <div className="mt-8 grid gap-5 border-y border-[#d8cebd] py-6 sm:grid-cols-3">
+              <div>
+                <p className="text-sm text-[#6d655b]">Location</p>
+                <p className="mt-1 font-semibold text-[#161412]">Dimapur</p>
+              </div>
+              <div>
+                <p className="text-sm text-[#6d655b]">Format</p>
+                <p className="mt-1 font-semibold text-[#161412]">Pageant</p>
+              </div>
+              <div>
+                <p className="text-sm text-[#6d655b]">Status</p>
+                <p className="mt-1 font-semibold text-[#161412]">Interest Open</p>
+              </div>
+            </div>
+
+            <div className="button-row mt-8">
+              <Link href="/register" className="btn btn-primary">
+                Apply Now
+              </Link>
+              <Link href="/contact" className="btn btn-secondary">
+                Sponsorship
+              </Link>
+            </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {events.map((event) => (
-              <article key={event.name} className="surface-card">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={event.img}
-                    alt={event.name}
-                    className="h-full w-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+          <div className="grid gap-4 sm:grid-cols-[0.96fr_1.04fr]">
+            <div className="image-frame group relative aspect-[4/5] sm:mt-16">
+              <Image
+                src="/event5.jpeg"
+                alt="Mr Dimapur contestant visual"
+                fill
+                sizes="(min-width: 1024px) 340px, 50vw"
+                className="image-zoom object-cover photo-focus-face"
+              />
+            </div>
+            <div className="image-frame group relative aspect-[4/5]">
+              <Image
+                src="/e.jpeg"
+                alt="Mr Dimapur contestant visual"
+                fill
+                sizes="(min-width: 1024px) 380px, 50vw"
+                className="image-zoom object-cover photo-focus-face"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="events" className="section bg-[#f7f4ee]">
+        <div className="container-shell">
+          <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="eyebrow">Events</p>
+              <h2 className="heading">Platforms with pageant discipline.</h2>
+            </div>
+            <Link href="/contact" className="text-link text-[#161412]">
+              Work With Meraki
+            </Link>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {platforms.map((platform) => (
+              <article key={platform.name} className="group">
+                <div className="image-frame relative aspect-[4/5]">
+                  <Image
+                    src={platform.img}
+                    alt={platform.name}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="image-zoom object-cover photo-focus-center"
                   />
                 </div>
-                <div className="p-4">
-                  <p className="text-sm font-semibold text-[#8d7132]">{event.timing}</p>
-                  <h3 className="mt-2 text-lg font-semibold text-[#151515]">{event.name}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#6d6963]">{event.detail}</p>
+                <div className="border-b border-[#d8cebd] py-5">
+                  <h3 className="display-font text-3xl text-[#161412]">{platform.name}</h3>
+                  <p className="mt-3 text-sm leading-6 text-[#6d655b]">{platform.detail}</p>
                 </div>
               </article>
             ))}
@@ -171,66 +186,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="section bg-[#111111] text-white">
-        <div className="container-shell grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
-            <p className="mb-3 text-sm font-semibold text-[#c8b36f]">Our Work</p>
-            <h2 className="heading max-w-xl text-white">
-              Built in Nagaland. Produced with intention.
-            </h2>
-            <div className="mt-5 max-w-2xl space-y-4 text-sm leading-7 text-[#b7b2aa] md:text-base">
-              <p>
-                Meraki Entertainment creates pageants, talent showcases and event experiences that
-                feel organized, current and rooted in local community.
-              </p>
-              <p>
-                The focus is simple: give contestants a credible platform, give partners a polished
-                environment and give audiences a memorable show.
-              </p>
-            </div>
+      <section id="about" className="section bg-[#10100f] text-white">
+        <div className="container-shell grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div className="image-frame relative aspect-[5/4]">
+            <Image
+              src="/event4.jpeg"
+              alt="Meraki winner moment"
+              fill
+              sizes="(min-width: 1024px) 560px, 100vw"
+              className="object-cover photo-focus-center"
+            />
           </div>
 
-          <div className="surface-card surface-card-dark p-4">
-            <div className="flex items-center gap-4">
-              <img
-                src="/founder.jpeg"
-                alt="Thritong Sangtam"
-                className="h-24 w-24 rounded object-cover"
-              />
-              <div>
-                <p className="text-sm text-[#b7b2aa]">Founder and PR</p>
-                <h3 className="mt-1 text-xl font-semibold text-white">Thritong Sangtam</h3>
-                <p className="mt-2 text-sm text-[#b7b2aa]">Meraki Entertainment</p>
-              </div>
+          <div>
+            <p className="mb-4 text-sm font-semibold text-[#d7c797]">Organisation</p>
+            <h2 className="heading max-w-xl text-white">A stage should feel graceful before it feels loud.</h2>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#cfc5b4]">
+              The Meraki experience is built around preparation: contestants are guided, partners
+              are presented with taste and every visual moment is shaped for public memory.
+            </p>
+
+            <div className="mt-10 grid gap-6 sm:grid-cols-3">
+              {process.map(([title, copy]) => (
+                <div key={title} className="border-t border-white/18 pt-5">
+                  <h3 className="font-semibold text-white">{title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-[#cfc5b4]">{copy}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section id="gallery" className="section bg-[#f7f7f4]">
+      <section id="gallery" className="section bg-[#f7f4ee]">
         <div className="container-shell">
-          <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow">Gallery</p>
-              <h2 className="heading">Recent moments</h2>
+              <h2 className="heading">Composed moments, not clutter.</h2>
             </div>
             <a
               href="https://www.instagram.com/meraki_entertainment2018/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-semibold text-[#151515] hover:text-[#8d7132]"
+              className="text-link text-[#161412]"
             >
               View Instagram
             </a>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-            {gallery.map((src, index) => (
-              <div key={src} className="surface-card aspect-[4/3]">
-                <img
-                  src={src}
-                  alt={`Meraki event moment ${index + 1}`}
-                  className="h-full w-full object-cover"
+          <div className="grid auto-rows-[190px] grid-cols-2 gap-3 md:auto-rows-[230px] md:grid-cols-4">
+            {gallery.map((item, index) => (
+              <div key={item.src} className={`image-frame group relative ${item.className}`}>
+                <Image
+                  src={item.src}
+                  alt={`Meraki event photography ${index + 1}`}
+                  fill
+                  sizes="(min-width: 768px) 25vw, 50vw"
+                  className={`image-zoom object-cover ${item.focus}`}
                 />
               </div>
             ))}
@@ -238,19 +251,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="sponsors" className="section-tight bg-white">
-        <div className="container-shell grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-          <div>
-            <p className="eyebrow">Collaborate</p>
-            <h2 className="heading">Partnerships, sponsorship and media.</h2>
-            <p className="body-copy mt-3 max-w-2xl">
-              For sponsorship, contestant information, media requests or event enquiries, contact
-              the Meraki team directly.
-            </p>
+      <section className="section-tight bg-white">
+        <div className="container-shell grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-center">
+          <div className="flex items-center gap-4">
+            <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full bg-[#ede7dc]">
+              <Image
+                src="/founder.jpeg"
+                alt="Thritong Sangtam"
+                fill
+                sizes="80px"
+                className="object-cover photo-focus-top"
+              />
+            </div>
+            <div>
+              <p className="text-sm text-[#6d655b]">Founder and PR</p>
+              <h2 className="display-font text-2xl text-[#161412]">Thritong Sangtam</h2>
+            </div>
           </div>
-          <Link href="/contact" className="btn btn-primary md:justify-self-end">
-            Get in Touch
-          </Link>
+
+          <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
+            <p className="body-copy max-w-2xl">
+              For contestant applications, sponsorship, media requests or a new pageant/event
+              conversation, reach the Meraki team directly.
+            </p>
+            <Link href="/contact" className="btn btn-primary md:justify-self-end">
+              Contact Meraki
+            </Link>
+          </div>
         </div>
       </section>
     </>

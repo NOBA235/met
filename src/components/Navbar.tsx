@@ -36,19 +36,32 @@ export default function Navbar() {
       <div className="container-shell">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="leading-none" onClick={() => setMobileOpen(false)}>
-            <span
-              className={`block text-[17px] font-semibold ${
-                transparent ? "text-white" : "text-[#141414]"
-              }`}
-            >
-              Meraki
-            </span>
-            <span
-              className={`mt-1 block text-[12px] ${
-                transparent ? "text-white/66" : "text-[#686157]"
-              }`}
-            >
-              Entertainment
+            <span className="flex items-center gap-3">
+              <span
+                className={`display-font flex h-9 w-9 items-center justify-center border text-lg leading-none ${
+                  transparent
+                    ? "border-[#e8dfcf]/42 text-[#e8dfcf]"
+                    : "border-[#9c7833]/45 text-[#9c7833]"
+                }`}
+              >
+                M
+              </span>
+              <span>
+                <span
+                  className={`block text-[15px] font-semibold uppercase ${
+                    transparent ? "text-[#e8dfcf]" : "text-[#141414]"
+                  }`}
+                >
+                  Meraki
+                </span>
+                <span
+                  className={`mt-0.5 block text-[11px] ${
+                    transparent ? "text-[#cfc5b4]" : "text-[#686157]"
+                  }`}
+                >
+                  Entertainment
+                </span>
+              </span>
             </span>
           </Link>
 
@@ -58,7 +71,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium ${
-                  transparent ? "text-white/76 hover:text-white" : "text-[#393631] hover:text-[#9b7a34]"
+                  transparent ? "text-[#cfc5b4] hover:text-[#e8dfcf]" : "text-[#393631] hover:text-[#9c7833]"
                 }`}
               >
                 {link.label}
@@ -72,7 +85,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className={`hidden sm:inline-flex ${
-                transparent ? "text-white/76 hover:text-white" : "text-[#393631] hover:text-[#9b7a34]"
+                transparent ? "text-[#cfc5b4] hover:text-[#e8dfcf]" : "text-[#393631] hover:text-[#9c7833]"
               }`}
               aria-label="Instagram"
             >
@@ -85,7 +98,7 @@ export default function Navbar() {
               href="/register"
               className={`hidden min-h-10 items-center justify-center border px-4 text-sm font-semibold md:inline-flex ${
                 transparent
-                  ? "border-white/24 text-white hover:border-white/70"
+                  ? "border-[#e8dfcf]/32 text-[#e8dfcf] hover:border-[#e8dfcf]/76"
                   : "border-[#d8d1c2] text-[#141414] hover:border-[#141414]"
               }`}
             >
@@ -95,7 +108,7 @@ export default function Navbar() {
             <button
               className={`inline-flex h-10 w-10 items-center justify-center border lg:hidden ${
                 transparent
-                  ? "border-white/24 text-white"
+                  ? "border-[#e8dfcf]/32 text-[#e8dfcf]"
                   : "border-[#d8d1c2] text-[#141414]"
               }`}
               onClick={() => setMobileOpen((open) => !open)}

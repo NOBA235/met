@@ -12,8 +12,9 @@
   --accent-soft: #efe2bd;
   --dark: #10100f;
   --dark-muted: #cfc5b4;
+  --ivory: #e8dfcf;
   --font-sans-stack: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --font-display-stack: "Bodoni 72", Didot, "Bodoni MT", "Times New Roman", serif;
+  --font-display-stack: "Cormorant Garamond", Garamond, Georgia, "Times New Roman", serif;
 }
 
 @theme inline {
@@ -101,18 +102,19 @@ a {
 .display {
   max-width: 12ch;
   font-family: var(--font-display-stack);
-  font-size: 54px;
+  font-size: 48px;
   font-weight: 400;
-  line-height: 0.95;
+  line-height: 1.02;
   text-wrap: balance;
+  overflow-wrap: normal;
 }
 
 .headline {
   max-width: 14ch;
   font-family: var(--font-display-stack);
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.05;
   text-wrap: balance;
 }
 
@@ -145,13 +147,13 @@ a {
 
 .btn {
   display: inline-flex;
-  min-height: 44px;
+  min-height: 42px;
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
   border-radius: 0;
-  padding: 12px 22px;
-  font-size: 13px;
+  padding: 11px 20px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1.2;
@@ -178,7 +180,7 @@ a {
 }
 
 .btn-light {
-  background: #ffffff;
+  background: var(--ivory);
   color: var(--foreground);
 }
 
@@ -187,13 +189,13 @@ a {
 }
 
 .btn-ghost-light {
-  border-color: rgba(255, 255, 255, 0.42);
-  color: #ffffff;
+  border-color: rgba(232, 223, 207, 0.36);
+  color: var(--ivory);
 }
 
 .btn-ghost-light:hover {
-  border-color: rgba(255, 255, 255, 0.86);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(232, 223, 207, 0.78);
+  background: rgba(232, 223, 207, 0.08);
 }
 
 .text-link {
@@ -349,25 +351,40 @@ a {
   }
 
   .display {
-    font-size: 88px;
+    font-size: 74px;
   }
 
   .headline {
-    font-size: 68px;
+    font-size: 58px;
   }
 
   .heading {
-    font-size: 52px;
+    font-size: 46px;
   }
 }
 
 @media (min-width: 1180px) {
   .display {
-    font-size: 104px;
+    font-size: 84px;
   }
 }
 
 @media (max-width: 767px) {
+  .display {
+    max-width: 100%;
+    font-size: 40px;
+    line-height: 1.03;
+  }
+
+  .headline {
+    max-width: 100%;
+    font-size: 42px;
+  }
+
+  .heading {
+    max-width: 100%;
+  }
+
   .hero-photo {
     object-position: 49% 9%;
   }

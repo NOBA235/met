@@ -45,16 +45,19 @@ export default function HomePage() {
           sizes="100vw"
           className="hero-photo"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,16,15,0.86)_0%,rgba(16,16,15,0.55)_42%,rgba(16,16,15,0.16)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,16,15,0.82)_0%,rgba(16,16,15,0.5)_42%,rgba(16,16,15,0.18)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#10100f] to-transparent" />
 
         <div className="container-shell relative z-10 flex min-h-[740px] items-end pb-12 pt-28 md:pb-18">
           <div className="max-w-3xl">
-            <p className="motion-rise mb-5 text-sm font-semibold text-[#d7c797]">
+            <p className="motion-rise mb-5 text-sm font-medium text-[#cdbf98]">
               Pageant organization in Nagaland
             </p>
-            <h1 className="display motion-rise motion-delay-1">Meraki Entertainment</h1>
-            <p className="motion-rise motion-delay-2 mt-7 max-w-xl text-base leading-8 text-white/78 md:text-lg">
+            <h1 className="display motion-rise motion-delay-1 text-[#e8dfcf]">
+              <span className="block">Meraki</span>
+              <span className="block">Entertainment</span>
+            </h1>
+            <p className="motion-rise motion-delay-2 mt-7 max-w-lg text-base leading-8 text-[#cfc5b4]">
               Represent your roots. Rise to the stage. A refined platform for pageants,
               talent and cultural presence.
             </p>

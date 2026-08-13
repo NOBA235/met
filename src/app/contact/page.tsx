@@ -11,41 +11,38 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-24 pb-20 min-h-screen bg-[#f8f6f1]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mb-14">
-          <p className="text-[#c4a35a] text-xs tracking-[0.3em] uppercase mb-3">
-            Get in Touch
+    <div className="min-h-screen bg-[#f7f7f4] pb-14 pt-28">
+      <div className="container-shell">
+        <div className="mb-10 max-w-2xl">
+          <p className="eyebrow">Contact</p>
+          <h1 className="heading">Let&apos;s talk about your event.</h1>
+          <p className="body-copy mt-4">
+            Use this form for general enquiries, contestant information, sponsorship and media
+            requests.
           </p>
-          <h1 className="font-serif text-4xl md:text-5xl text-[#0f0f0f]">
-            Let&apos;s Create Something Memorable.
-          </h1>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
-          <div className="space-y-8">
+        <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+          <aside className="space-y-5">
             {[
-              { title: "General Enquiries", desc: "Questions about Meraki and our work." },
-              { title: "Contestant Enquiries", desc: "Registration, eligibility and event details." },
-              { title: "Sponsorship", desc: "Partnership and brand collaboration opportunities." },
-              { title: "Media / PR", desc: "Press, interviews and media requests." },
+              { title: "General", desc: "Questions about Meraki and upcoming platforms." },
+              { title: "Contestants", desc: "Registration, eligibility and event details." },
+              { title: "Partnerships", desc: "Sponsorship, brand and media opportunities." },
             ].map((item) => (
-              <div key={item.title}>
-                <h3 className="text-sm tracking-[0.15em] uppercase text-[#0f0f0f] mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-[#6b6560]">{item.desc}</p>
+              <div key={item.title} className="border-b border-[#dedbd3] pb-5">
+                <h2 className="text-sm font-semibold text-[#151515]">{item.title}</h2>
+                <p className="mt-1 text-sm leading-6 text-[#6d6963]">{item.desc}</p>
               </div>
             ))}
 
-            <div className="pt-6 border-t border-[#e8e4dc]">
-              <p className="text-sm text-[#6b6560] mb-3">Follow us</p>
-              <div className="flex gap-4">
+            <div>
+              <p className="text-sm font-semibold text-[#151515]">Social</p>
+              <div className="mt-2 flex gap-4">
                 <a
                   href="https://www.instagram.com/meraki_entertainment2018/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#0f0f0f] hover:text-[#c4a35a] transition-colors"
+                  className="text-sm text-[#6d6963] hover:text-[#8d7132]"
                 >
                   Instagram
                 </a>
@@ -53,90 +50,57 @@ export default function ContactPage() {
                   href="https://www.youtube.com/@ThritongSangtam"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#0f0f0f] hover:text-[#c4a35a] transition-colors"
+                  className="text-sm text-[#6d6963] hover:text-[#8d7132]"
                 >
                   YouTube
                 </a>
               </div>
-              <p className="mt-6 text-sm text-[#6b6560]">Nagaland, India</p>
+              <p className="mt-4 text-sm text-[#6d6963]">Nagaland, India</p>
             </div>
-          </div>
+          </aside>
 
-          <div className="lg:col-span-2">
+          <div>
             {submitted ? (
-              <div className="bg-white border border-[#e8e4dc] p-10 text-center">
-                <h2 className="font-serif text-2xl text-[#0f0f0f] mb-3">Message Sent</h2>
-                <p className="text-[#6b6560]">
-                  Thank you. We will respond as soon as possible.
-                </p>
+              <div className="surface-card p-6 text-center md:p-8">
+                <h2 className="subheading">Message sent</h2>
+                <p className="body-copy mt-2">Thank you. We will respond as soon as possible.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-white border border-[#e8e4dc] p-6 md:p-10 space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="surface-card space-y-5 p-5 md:p-6">
+                <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="block text-xs tracking-[0.15em] uppercase text-[#6b6560] mb-2">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full border border-[#e8e4dc] px-4 py-3 text-sm focus:outline-none focus:border-[#c4a35a] bg-[#f8f6f1]"
-                    />
+                    <label className="form-label">Name *</label>
+                    <input type="text" required className="form-field" />
                   </div>
                   <div>
-                    <label className="block text-xs tracking-[0.15em] uppercase text-[#6b6560] mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      className="w-full border border-[#e8e4dc] px-4 py-3 text-sm focus:outline-none focus:border-[#c4a35a] bg-[#f8f6f1]"
-                    />
+                    <label className="form-label">Email *</label>
+                    <input type="email" required className="form-field" />
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="block text-xs tracking-[0.15em] uppercase text-[#6b6560] mb-2">
-                      Phone
-                    </label>
-                    <input
-                      type="tel"
-                      className="w-full border border-[#e8e4dc] px-4 py-3 text-sm focus:outline-none focus:border-[#c4a35a] bg-[#f8f6f1]"
-                    />
+                    <label className="form-label">Phone</label>
+                    <input type="tel" className="form-field" />
                   </div>
                   <div>
-                    <label className="block text-xs tracking-[0.15em] uppercase text-[#6b6560] mb-2">
-                      Enquiry Type *
-                    </label>
-                    <select
-                      required
-                      className="w-full border border-[#e8e4dc] px-4 py-3 text-sm focus:outline-none focus:border-[#c4a35a] bg-[#f8f6f1]"
-                    >
+                    <label className="form-label">Enquiry Type *</label>
+                    <select required className="form-field">
                       <option value="">Select</option>
-                      <option>General Enquiries</option>
-                      <option>Contestant Enquiries</option>
+                      <option>General</option>
+                      <option>Contestant</option>
                       <option>Sponsorship</option>
-                      <option>Media / PR</option>
+                      <option>Media</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs tracking-[0.15em] uppercase text-[#6b6560] mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    required
-                    rows={5}
-                    className="w-full border border-[#e8e4dc] px-4 py-3 text-sm focus:outline-none focus:border-[#c4a35a] bg-[#f8f6f1] resize-none"
-                  />
+                  <label className="form-label">Message *</label>
+                  <textarea required rows={5} className="form-field resize-none" />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto px-10 py-4 bg-[#0f0f0f] text-white text-xs tracking-[0.2em] uppercase hover:bg-[#c4a35a] transition-colors"
-                >
+                <button type="submit" className="btn btn-primary w-full sm:w-auto">
                   Send Message
                 </button>
               </form>
